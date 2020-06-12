@@ -1,0 +1,278 @@
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+}
+.sidebar {
+	z-index: 2;
+	position: fixed;
+	left: -250px;
+	width: 250px;
+	height: 100%;
+	background: linear-gradient(#00000a, #458efc, #ad0000);
+	transition: all 0.5s ease;
+}
+.sidebar header {
+	font-size: 22px;
+	color: white;
+	text-align: center;
+	line-height: 90px;
+	background: linear-gradient(#124266);
+	user-select: none;
+	border-bottom: 2px solid black;
+}
+
+.sidebar ul a {
+	display: block;
+	height: 9%;
+	width: 100%;
+	line-height: 65px;
+	font-size: 20px;
+	color: white;
+	padding-left: 40px;
+	box-sizing: border-box;
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	border-bottom: 1.5px solid black;
+	transition: 0.4s;
+}
+
+ul li:hover a {
+	padding-left: 50px;
+}
+
+.sidebar ul a i {
+	margin-right: 16px;
+}
+
+#check {
+	display: none;
+}
+label #btn,
+label #cancel {
+	position: absolute;
+	cursor: pointer;
+	background: none;
+	border-radius: 3px;
+}
+label #btn {
+	z-index: 3;
+	left: 40px;
+	top: 25px;
+	font-size: 35px;
+	color: black;
+	padding: 6px 12px;
+	transition: all 0.5s;
+}
+label #cancel {
+	z-index: 1111;
+	left: -195px;
+	top: 25px;
+	font-size: 30px;
+	color: black;
+	padding: 4px 9px;
+	transition: all 0.5s ease;
+}
+#check:checked ~ .sidebar {
+	left: 0;
+}
+#check:checked ~ label #btn {
+	left: 250px;
+	opacity: 0;
+	pointer-events: none;
+}
+#check:checked ~ label #cancel {
+	left: 195px;
+}
+
+#check:checked ~ section {
+	margin-left: 250px;
+}
+section {
+	background: url(img/Las_Vegas.jpeg) no-repeat;
+	background-position: center;
+	background-size: cover;
+	opacity: 0.1;
+	height: 100vh;
+	transition: all 0.5s;
+}
+
+/* .main_contains .login .box01{
+	background-position: center;
+	background-size: cover;
+	height: 100vh;
+} */
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	background: linear-gradient(#458efc, #00000a, #3b0101);
+}
+/* div #back {
+	position: absolute;
+
+	top: 50%;
+	left: 50%;
+	width: 300px;
+	background: rgba(255, 255, 255, 0.5);
+} */
+.box01 {
+	width: 300px;
+	padding: 40px;
+	position: absolute;
+	border-radius: 10px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	/* background: url(img/casino.jpg) no-repeat;
+	background-position: center;
+	background-size: cover; */
+	/* opacity: 0.8; */
+	transition: all 0.5s;
+	text-align: center;
+}
+.box01 h1 {
+	color: white;
+	text-transform: uppercase;
+	font-weight: 500;
+}
+.box01 input[type="text"],
+.box01 input[type="password"] {
+	border: 0;
+	background: none;
+	display: block;
+	margin: 20px auto;
+	text-align: center;
+	border: 2px solid #3498db;
+	padding: 14px 10px;
+	width: 200px;
+	outline: none;
+	color: white;
+	border-radius: 24px;
+	transition: 0.25s;
+}
+.box01 input[type="text"]:focus,
+.box01 input[type="password"]:focus {
+	width: 280px;
+	border-color: #2ecc71;
+}
+.box01 input[type="submit"] {
+	border: 0;
+	background: none;
+	display: block;
+	margin: 20px auto;
+	text-align: center;
+	border: 2px solid #2ecc71;
+	padding: 14px 40px;
+	outline: none;
+	color: white;
+	border-radius: 24px;
+	transition: 0.25s;
+	cursor: pointer;
+}
+.box01 input[type="submit"]:hover {
+	background: #2ecc71;
+}
+/* .register {
+	width: 70px;
+	position: absolute;
+	border-radius: 10px;
+	top: 75%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: linear-gradient(#191919, #022883);
+	border: 0;
+	background: none;
+	display: block;
+	margin: 10px auto;
+	text-align: center;
+	border: 2px solid #2ecc71;
+	padding: 7px 30px;
+	outline: none;
+	border-radius: 24px;
+	transition: 0.25s;
+	cursor: pointer;
+} */
+.box02 {
+	width: 300px;
+	padding: 40px;
+	position: absolute;
+	border-radius: 10px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	/* background: linear-gradient(#191919, #022883); */
+	background: none;
+	text-align: center;
+}
+.box02 h1 {
+	color: white;
+	text-transform: uppercase;
+	font-weight: 500;
+}
+.box02 input[type="text"],
+.box02 input[type="password"],
+.box02 input[type="email"] {
+	border: 0;
+	background: none;
+	display: block;
+	margin: 20px auto;
+	text-align: center;
+	border: 2px solid #3498db;
+	padding: 14px 10px;
+	width: 200px;
+	outline: none;
+	color: white;
+	border-radius: 24px;
+	transition: 0.25s;
+}
+.box02 input[type="text"]:focus,
+.box02 input[type="password"]:focus,
+.box02 input[type="email"]:focus {
+	width: 280px;
+	border-color: #2ecc71;
+}
+.box02 input[type="submit"] {
+	border: 0;
+	background: none;
+	display: block;
+	margin: 20px auto;
+	text-align: center;
+	border: 2px solid #2ecc71;
+	padding: 14px 40px;
+	outline: none;
+	color: white;
+	border-radius: 24px;
+	transition: 0.25s;
+	cursor: pointer;
+}
+.box02 input[type="submit"]:hover {
+	background: #2ecc71;
+}
+.triangle01 {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	width: 0;
+	height: 0;
+	border-left: solid 15px transparent;
+	border-right: solid 15px transparent;
+	border-bottom: solid 15px transparent;
+	border-top: solid 15px #adfddc;
+	top: 71.5%;
+	left: 50%;
+	background: none;
+}
+.triangle02 {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	width: 0;
+	height: 0;
+	border-left: solid 15px transparent;
+	border-right: solid 15px transparent;
+	border-top: solid 15px transparent;
+	border-bottom: solid 15px #adfddc;
+	top: 93%;
+	left: 50%;
+	background: none;
+}

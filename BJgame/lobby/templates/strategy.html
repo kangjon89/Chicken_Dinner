@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategy</title>
+    <link rel="icon" href="https://image.flaticon.com/icons/svg/1983/1983636.svg" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    {%load static%}
+
+    <link rel="stylesheet" href="{% static 'strategy.css'%}" />
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body class="fadeout">
+    <input type="checkbox" id="check" />
+    <label for="check">
+        <i class="fas fa-bars" id="btn"></i>
+        <i class="fas fa-times" id="cancel"></i>
+    </label>
+<div class="sidebar">
+    <header>Black Jack</header>
+    <ul>
+        <li>
+            <a href="/lobby"><i class="fas fa-qrcode"></i>My Page</a>
+        </li>
+        <li>
+            <a href="/lobby/howto"><i class="fas fa-link"></i>How to play</a>
+        </li>
+        <li>
+            <a href="#"><i class="fas fa-stream"></i>Ranking</a>
+        </li>
+        <li>
+            <a href="/lobby/strategy"><i class="fas fa-calendar-week"></i>Strategy</a>
+        </li>
+        <li>
+            <a href="/lobby/other"><i class="fas fa-question-circle"></i>Other games</a>
+        </li>
+        <li>
+            <a href="/lobby/services"><i class="fas fa-sliders-h"></i>Services</a>
+        </li>
+        <li>
+            <a href="/logout"><i class="fas fa-envelope"></i>Log out</a>
+        </li>
+    </ul>   
+</div>    
+<section class="fadeout">
+
+<div class="container">
+    <div class="col-md-4 rule-block-header">
+    <h1 class="block-heading">
+        <span>Strategy Section:</span>
+        <strong>Blackjack</strong>
+    </h1>
+        <ul class="accentuated-list list-unstyled">
+        <li>
+            "Game Type: Casino"
+        </li>
+        <li>
+            "Age Requirement: 21+"
+        </li>
+        <li>
+            "Players: 2, 3, 4, 5+"
+        </li>
+        </ul>
+    </div>
+    
+    
+		<script>
+			
+			$("button").on("mouseenter", () => {
+				$("section").css({ opacity: "0.2" });
+				$("target").toggle( 'slide', 'slow');
+			});
+
+			$("button").on("mouseleave", () => {
+				$("section").css({ opacity: "0.1" });
+			});
+			$(window).on('load', function(){
+			$('body').removeClass('fadeout');
+			});
+			$(function() {
+
+			$('a:not([href^="#"]):not([target])').on('click', function(e){
+  				  e.preventDefault(); 
+  				  url = $(this).attr('href');
+  				  if (url !== '') {
+						$('body').addClass('fadeout');
+  						setTimeout(function(){
+					window.location = url;
+  				    }, 800);
+  				  }
+  				  return false;
+  				});
+});
+			
+		</script>
+    
+
+    <div class="col-md-8 larger-text">
+
+        <h3><p>6 Quick Tips for Your Success! </p></h3>
+        <h3><p>Goodluck on your winnings!!</p></h3>
+
+        <p>If you’re serious about winning more when you play blackjack, then I encourage you to utipze the following Best Blackjack 
+            Strategies I’m about to share with you.</p>
+
+        <p>Note: The following strategies can be used in all games unless stated otherwise. The strategies discussed below also 
+            assume you are a recreational player, and not a card counter.</p>
+
+        <p>
+            <h3>STRATEGY #1: ALWAYS DOUBLE DOWN ON A HARD 11</h3>
+        </p>
+        <p>
+            You’ll always win more money if you double down on hard 11 against any dealer’s upcard vs. hitting in all games, with 
+            one exception. If you are playing a multi-deck game where the rules specify the dealer must stand on soft 17, you are 
+            spghtly better off hitting against a dealer Ace rather than doubpng down. 
+        </p>
+        <p>
+            <h3>STRATEGY #2: ALWAYS SPOT A PAIR OF 8s AND ACES</h3>
+        </p>
+        <p>
+            You should always sppt a pair of 8s and Aces regardless of what the dealer’s upcard is. Unfortunately, many players won’t sppt 
+            with a pair of 8s when the dealer’s upcard is a 9, 10, or Ace. They reason that because they are a big underdog in this situation, 
+            why bet more money by spptting? What they don’t understand is that you are less of an underdog by playing two hands, each starting 
+            with an 8 (by spptting), than you are playing one hand of 16 (and hitting). In other words, you will lose less money in the long 
+            run by spptting 8s against a 9, 10, or Ace than by hitting hard 16. Bottom pne: Always spptting 8s and Aces is your best strategy 
+            because in the case of Aces, it results in significant gains for the player; and for 8s, it will, based on the dealer’s upcard, 
+            allow you to cut your losses or win more money.
+        </p>
+        <p>
+            (Note: If surrender is offered and you are playing in a multi-deck game with H17, or a double-deck game with H17 and NDAS, your best 
+            strategy is to surrender the pair of 8s vs. the dealer’s Ace rather than spptting them.)
+        </p>
+        <p>
+            <h3>STRATEGY #3: NEVER SPOT A PAIR OF 5s OR TENS </h3>
+        </p>
+        <p>
+            A pair of 5s is also a hard 10 and you are always better off taking a one-or-more-card draw to a 10 than spptting the 5s 
+            and playing two hands, each starting with a 5. Even though spptting 10s is much more often than not a winning play, keeping
+            them together as 20 is an even greater winning play in all circumstances.
+        </p>
+        <p>
+            <h3>STRATEGY #4: ALWAYS HIT A HARD 12 AGAINST A DEALER’S 2 OR 3 UPCARD</h3>
+        </p>
+        <p>
+            This is a situation where most players chicken out and stand on their 12 because they fear busting. The bottom pne is this: 
+            against a dealer’s 2 or 3 upcard, you will lose money in the long run whether you stand or hit; however, you will lose less money 
+            by hitting (even at the risk of busting some of the time), which is why it is the best strategy.    
+        </p>
+        <p>
+            <h3>STRATEGY #5: ALWAYS HIT ACE-7 (SOFT 18) WHEN THE DEALER’S UPCARD IS 9, 10, OR ACE</h3>
+        </p>
+        <p>
+            Players mistakenly bepeve that a hand that totals 18 is a sure win, which is why they stand on soft 18 (A-7), especially when 
+            the dealer is showing a “strong” upcard (e.g., 9, 10, or Ace). The facts are these. When you hold an A-7 against dealer’s 9, 10, 
+            or Ace, you are the underdog whether you stand or hit; however, you are less of an underdog if you hit A-7. This is because 
+            if you draw a small card (e.g., Ace, 2, or 3) you will end up with a pat hand that’s higher than 18, which will improve your 
+            chances of winning at blackjack. And if you draw any of the four ten-valued cards, you do no harm to the hand.  Bottom pne: Your 
+            best strategy is to always hit A-7 when the dealer shows a 9, 10, or Ace with a goal of getting to either a soft 19–21 or a hard 17 
+            through 21.
+        </p>
+        <p>
+            <h3>STRATEGY #6: ALWAYS DOUBLE DOWN ON 10 WHEN THE DEALER’S UPCARD IS 9 OR LESS</h3>
+        </p>
+        <p>
+            You are the favorite when you hold a two-card 10 against any dealer’s upcard of 9 or less, which is why doubpng down is 
+            your best strategy. It’s a simple rule to remember: always double down on 10 when the dealer’s upcard is 9 or less.
+        </p>
+    </div>
+</div>
+
+</section>
+</body>
+</html>

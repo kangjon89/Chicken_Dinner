@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Bet</title>
+		<link rel="icon" href="https://image.flaticon.com/icons/svg/75/75406.svg" type="image/x-icon">
+		{%load static%}
+		<link rel="stylesheet" href="{% static 'game.css'%}" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+		/>
+
+		<link
+			href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700i"
+			rel="stylesheet"
+		/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" crossorigin="anonymous"></script>
+
+	</head>
+
+	<body class="fadeout">
+		{% if able_bet == True and isResult == False %}
+		
+		<form class="bet_box" action="" method="POST">
+			{%csrf_token%}
+
+			<h1>Bet</h1>
+			<h1>Purse: ${{ money }} </h1>
+
+			<input type="text" placeholder="Please bet" name="bet" id="bet" />
+
+			<!-- {% if msg %}
+				<div>{{ msg }}</div>
+				{% endif %} -->
+				{%csrf_token%}
+
+			<input type="submit" id="confirm" />
+		</form>
+
+		{% else %}
+
+		<div class="card_dealer">
+			{% static "bjcards/" as card_path %}
+			
+			{% for c in dealer_cards %}
+
+			<img
+				src="{{ card_path }}{{ c }}"
+				class="cards
+				{% if isResult %}
+				delay
+				{% endif %}
+				"
+				{% if isResult %}
+				id="visible"
+				{% endif %}
+				width="150px"
+				height="200px"
+				
+			/>
+			
+			{% endfor %}
+			
+
+			<img
+				src="{{ card_path }}card_bk_black.jpg"
+				class="cards"
+				width="150px"
+				height="200px"
+				{% if isResult %}
+				id="change_card"
+				{% endif %}
+			/>
+
+			
+		</div>
+		<!-- <div class="dealer_point">
+			{{ dealer_point }}
+		</div> -->
+		{% if request.session.result == 'draw' %}
+		<div class="result_btn">
+			<div class="draw" data-text="Draw">Draw</div>
+			<a href="/game" id="inVisible_btn"><button>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				Again?
+			</button></a>
+		</div>
+		{% else %}
+		<a href="/game/result" class="result_btn">
+			<button>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				Result
+			</button>
+		</a>
+		{% endif %}
+		<form class="op" action="" method="POST">
+			{%csrf_token%}
+			<div class="box"
+			{% if isResult %}
+			id="toinVisible" 
+			{% endif %}
+			>
+				<p>Select</p>
+				<label>
+					<input type="radio" name="operation" value="2" />
+					<span class="hit">Hit</span>
+				</label>
+				<label>
+					<input type="radio" name="operation" value="1" checked />
+					<span class="stand">Stand</span>
+				</label>
+				<label>
+					<input type="radio" name="operation" value="3" />
+					<span class="double">Double down</span>
+				</label>
+
+				<input type="submit" name="" value="OK" />
+			</div>
+		</form>
+		<div class="card_player">
+			{% static "bjcards/" as card_path %} {% for c in player_cards %}
+			<img src="{{ card_path }}{{ c }}" width="120px" height="160px" />
+			{% endfor %}
+		</div>
+		<!-- <div class="pleyer_point">
+			{{ player_point }}
+		</div> -->
+		{% endif %}
+
+		<nav role="navigation" id="mainnav">
+			<br /><br /><br />
+			<ul class="gap">
+				<li><a href="/lobby">HOME</a></li>
+				<li><a href="#?">MONEY ${{ money }}</a></li>
+				<li><a href="#?">CLIENTS</a></li>
+				<li><a href="#?">SERVICES</a></li>
+				<li><a href="#?">TEAMS</a></li>
+				<li><a href="#?">LOCATION</a></li>
+			</ul>
+		</nav>
+
+		<div class="hamb">
+			<a href="#"><i class="fa fa-bars"></i></a>
+		</div>
+
+		<div class="hero"></div>
+
+		<canvas id="bubble"></canvas>
+
+		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/jquery-ui.js"></script>
+		<script>
+			$(window).on('load', function(){
+			$('body').removeClass('fadeout');
+			$('.result_btn').hide();
+			$("#inVisible_btn").hide();
+			});
+			$("#bet").keyup(function(){
+				var val = $(this).val();
+				var message = "Are you sure you want to bet " + val + "?";
+				$("#confirm").on("click",()=>{
+					window.alert(message);
+				});
+				
+			});
+			$('.draw').on("mouseenter",()=>{
+				$("#inVisible_btn").fadeIn();
+				$('.draw').css({top:"42%"});
+				$("a button").css({top:"58%"});
+			});
+			$.when(
+				$('#toinVisible').fadeOut(3000),
+				$("#change_card").fadeOut(3000),
+				$('.delay').hide(),
+				$("#visible").show()
+
+			).done(
+				function () {
+				$('.delay').each(function (i) {
+				  $(this).delay(500 * i).fadeIn(1000);
+				});
+				},
+				function (){
+					$(".result_btn").fadeIn();
+					
+				}
+				
+			);
+
+			$(function() {
+			$('a:not([href^="#"]):not([target])').on('click', function(e){
+				e.preventDefault(); 
+				url = $(this).attr('href');
+				if (url !== '') {
+					$('body').addClass('fadeout');
+					setTimeout(function(){
+					window.location = url;
+					}, 800);
+				}
+			return false;
+				});
+			});
+			
+
+			var w = window.innerWidth,
+				h = window.innerHeight,
+				canvas = document.getElementById("bubble"),
+				ctx = canvas.getContext("2d"),
+				rate = 60,
+				arc = 100,
+				time,
+				count,
+				size = 7,
+				speed = 20,
+				lights = new Array(),
+				colors = ["#d59254", "#ffffff", "#ad0000", "#FFD700"];
+
+			canvas.setAttribute("width", w);
+			canvas.setAttribute("height", h);
+
+			function init() {
+				time = 0;
+				count = 0;
+
+				for (var i = 0; i < arc; i++) {
+					lights[i] = {
+						x: Math.ceil(Math.random() * w),
+						y: Math.ceil(Math.random() * h),
+						toX: Math.random() * 5 + 1,
+						toY: Math.random() * 5 + 1,
+						c: colors[Math.floor(Math.random() * colors.length)],
+						size: Math.random() * size
+					};
+				}
+			}
+
+			function bubble() {
+				ctx.clearRect(0, 0, w, h);
+
+				for (var i = 0; i < arc; i++) {
+					var li = lights[i];
+
+					ctx.beginPath();
+					ctx.arc(li.x, li.y, li.size, 0, Math.PI * 2, false);
+					ctx.fillStyle = li.c;
+					ctx.fill();
+
+					li.x = li.x + li.toX * (time * 0.05);
+					li.y = li.y + li.toY * (time * 0.05);
+
+					if (li.x > w) {
+						li.x = 0;
+					}
+					if (li.y > h) {
+						li.y = 0;
+					}
+					if (li.x < 0) {
+						li.x = w;
+					}
+					if (li.y < 0) {
+						li.y = h;
+					}
+				}
+				if (time < speed) {
+					time++;
+				}
+				timerID = setTimeout(bubble, 1000 / rate);
+			}
+			init();
+			bubble();
+
+			//navigation (this is my code)
+			var animation = "easeOutCubic";
+			delay = 60;
+
+			$(document)
+				.on("click", ".fa-bars", function() {
+					var i = 0;
+					$("nav").before($("#bubble"));
+					$("#bubble").fadeIn();
+					$("#mainnav")
+						.find("li")
+						.each(function() {
+							var that = $(this);
+							i++;
+							(function(i, that) {
+								setTimeout(function() {
+									that
+										.animate(
+											{ left: "20px" },
+											{ duration: 350, easing: animation }
+										)
+										.fadeIn({ queue: false });
+								}, delay * i);
+							})(i, that);
+						});
+					$(".fa-bars").fadeOut(100, function() {
+						$(this)
+							.removeClass("fa-bars")
+							.addClass("fa-times")
+							.fadeIn();
+					});
+				})
+				.on("click", "#bubble, .fa-times", function() {
+					$("#bubble").fadeOut();
+					$("#mainnav")
+						.find("li")
+						.animate({ left: "-550px" }, { duration: 250 })
+						.fadeOut({ queue: false });
+
+					$(".hamb").fadeOut(100, function() {
+						$(this)
+							.find($("i"))
+							.removeClass("fa-times")
+							.addClass("fa-bars")
+							.end()
+							.fadeIn();
+					});
+				});
+		</script>
+		<section></section>
+	</body>
+</html>

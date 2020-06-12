@@ -1,0 +1,725 @@
+body {
+	margin: 0;
+	padding: 0;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-color: #000;
+}
+#result {
+	z-index: 1;
+	margin-left: 40%;
+	position: absolute;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 3em;
+	letter-spacing: 4px;
+	overflow: hidden;
+	background: linear-gradient(90deg, #000, #fff, #000);
+	top: 40%;
+	transform: translateY(-50%);
+	width: 250px;
+	text-align: center;
+	background-size: 80%;
+	background-repeat: no-repeat;
+	animation: animate 3s linear infinite;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+#dp {
+	position: absolute;
+	top: 29%;
+	left: 38%;
+	font-size: 50px;
+	color: #fff;
+}
+#pp {
+	position: absolute;
+	top: 34.5%;
+	left: 38%;
+	font-size: 50px;
+	color: #fff;
+}
+@keyframes animate {
+	0% {
+		background-position: -500%;
+	}
+	100% {
+		background-position: 500%;
+	}
+}
+
+#flash {
+	height: 100vh;
+	background: #000;
+	z-index: 1;
+}
+#flash:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+video {
+	object-fit: cover;
+	z-index: 1;
+}
+/* .win {
+	margin-left: 40%;
+	position: absolute;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 4em;
+	letter-spacing: 4px;
+	overflow: hidden;
+	background: linear-gradient(90deg, #000, #fff, #000);
+	top: 50%;
+	transform: translateY(-50%);
+	width: 250px;
+	text-align: center;
+	background-size: 80%;
+	background-repeat: no-repeat;
+} */
+.win {
+	z-index: 1;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	margin: 0;
+	padding: 0 20px;
+	font-size: 6em;
+	color: #fb8b24;
+	text-shadow: 0 0 50px #fb8b24;
+	letter-spacing: 5px;
+	transition: 1s;
+	-webkit-transition: 1s;
+}
+/* .win {
+	transform: translateY(300px);
+} */
+
+.win:after {
+	content: attr(data-text);
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 0 20px;
+	z-index: -1;
+	color: #fb8b24;
+	filter: blur(15px);
+}
+
+.win:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #fb8b24;
+	z-index: -2;
+	opacity: 0.3;
+	filter: blur(50px);
+}
+#gold {
+	opacity: 0.35;
+}
+/* h1 {
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 100%;
+	text-align: center;
+	color: #fff;
+	font-size: 5em;
+	font-family: sans-serif;
+	letter-spacing: 0.2em;
+}
+h1 span {
+	opacity: 0;
+	display: inline-block;
+	animation: animate 1s linear forwards;
+}
+@keyframes animate {
+	0% {
+		opacity: 0;
+		transform: rotateY(90deg);
+		filter: blur(10px);
+	}
+	100% {
+		opacity: 1;
+		transform: rotateY(0deg);
+		filter: blur(0);
+	}
+}
+/* /* h1 span:nth-child(1) {
+	animation-delay: 1.5s;
+}
+h1 span:nth-child(2) {
+	animation-delay: 2s;
+}
+h1 span:nth-child(3) {
+	animation-delay: 2.5s;
+}
+h1 span:nth-child(4) {
+	animation-delay: 3s;
+}
+h1 span:nth-child(5) {
+	animation-delay: 3.5s;
+}
+h1 span:nth-child(6) {
+	animation-delay: 3.75s;
+}
+h1 span:nth-child(7) {
+	animation-delay: 4s;
+}
+h1 span:nth-child(8) {
+	animation-delay: 4.5s;
+/  */
+
+#div_1 {
+	background-color: #012839;
+
+	text-align: center;
+}
+.shiny_button {
+	bottom: 0px;
+	box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+	box-sizing: border-box;
+	color: #fb8b24;
+	display: inline-block;
+	height: 119px;
+	width: 300px;
+
+	overflow-wrap: break-word;
+	position: absolute;
+	top: 45%;
+	left: 50%;
+	text-align: center;
+	text-decoration: none solid #fb8b24;
+
+	/*width: 402.938px;*/
+	word-wrap: break-word;
+	column-rule-color: #fb8b24;
+	-webkit-font-smoothing: antialiased;
+	-webkit-locale: "en-US";
+	perspective-origin: 201.469px 59.5px;
+	-webkit-text-decorations-in-effect: none;
+	-webkit-text-emphasis-color: #fb8b24;
+
+	transform-origin: 201.469px 59.5px;
+	caret-color: #fb8b24;
+	border: 2px solid #fb8b24;
+	border-radius: 30px 30px 30px 30px;
+	font: normal normal 500 normal 50px / 85px "Open Sans", Arial, sans-serif;
+	margin: 100px 0px;
+	outline: #fb8b24 none 0px;
+	overflow: hidden;
+	padding: 15px 50px;
+	transition: all 0.2s ease-in 0s;
+	-webkit-border-after: 2px solid #fb8b24;
+	-webkit-border-before: 2px solid #fb8b24;
+	-webkit-border-end: 2px solid #fb8b24;
+	-webkit-border-start: 2px solid #fb8b24;
+	-webkit-transition: all 0.2s ease-in 0s;
+	-webkit-transform-origin: 201.469px 59.5px;
+} /*#A_2*/
+
+.shiny_button:before {
+	bottom: 8.0625px;
+	box-shadow: rgb(255, 255, 255) 0px 0px 60px 20px;
+	color: #fb8b24;
+	content: '""';
+	display: block;
+	height: 98.8906px;
+	left: 0px;
+	opacity: 0;
+	overflow-wrap: break-word;
+	position: absolute;
+	right: 430.938px;
+	text-align: center;
+	text-decoration: none solid #fb8b24;
+	top: 8.04688px;
+	width: 0px;
+	word-wrap: break-word;
+	column-rule-color: #fb8b24;
+	-webkit-font-smoothing: antialiased;
+	-webkit-locale: "en-US";
+	perspective-origin: 0px 49.4375px;
+	-webkit-text-decorations-in-effect: none;
+	-webkit-text-emphasis-color: #fb8b24;
+	-webkit-text-fill-color: #fb8b24;
+	-webkit-text-stroke-color: #fb8b24;
+	transform: matrix(1, 0, -0.36397, 1, 0, 0);
+	transform-origin: 0px 49.4375px;
+	caret-color: #fb8b24;
+	background: rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box
+		border-box;
+	border: 0px none #fb8b24;
+	font: normal normal 500 normal 32px / 32px "Open Sans", Arial, sans-serif;
+	margin: 0px 0px 0px -32px;
+	outline: #fb8b24 none 0px;
+	transition: all 0.2s ease 0s;
+	-webkit-border-after: 0px none #fb8b24;
+	-webkit-border-before: 0px none #fb8b24;
+	-webkit-border-end: 0px none #fb8b24;
+	-webkit-border-start: 0px none rgb(251, 139, 36);
+	-webkit-transition: all 0.2s ease 0s;
+	-webkit-transform-origin: 0px 49.4375px;
+} /*#A_2:before*/
+
+/* Start shiny hover effect*/
+.shiny_button {
+	overflow: hidden;
+	box-shadow: 0 0 0 0 transparent;
+	-webkit-transition: all 0.2s ease-in;
+	-moz-transition: all 0.2s ease-in;
+	transition: all 0.2s ease-in;
+}
+.shiny_button:hover {
+	box-shadow: 0 0 30px 5px rgba(251, 139, 36, 0.5); /* set your color here 
+       (it should be the same as the button bg color on hover but with 0.5 opacity)
+       and play with 30px and 5px values to adjust box-shadow */
+	-webkit-transition: all 0.2s ease-out;
+	-moz-transition: all 0.2s ease-out;
+	transition: all 0.2s ease-out;
+}
+.shiny_button:hover:before {
+	-webkit-animation: shine 0.5s 0s linear;
+	-moz-animation: shine 0.5s 0s linear;
+	animation: shine 0.5s 0s linear;
+}
+.shiny_button:active {
+	box-shadow: 0 0 0 0 transparent;
+	-webkit-transition: box-shadow 0.2s ease-in;
+	-moz-transition: box-shadow 0.2s ease-in;
+	transition: box-shadow 0.2s ease-in;
+}
+.shiny_button:before {
+	content: "";
+	display: block;
+	width: 0px;
+	height: 86%;
+	position: absolute;
+	top: 7%;
+	left: 0%;
+	opacity: 0;
+	background: #ffffff;
+	box-shadow: 0 0 60px 20px #ffffff; /*play with 60px and 20px values to adjust box-shadow*/
+	-webkit-transform: skewX(-20deg);
+	-moz-transform: skewX(-20deg);
+	-ms-transform: skewX(-20deg);
+	-o-transform: skewX(-20deg);
+	transform: skewX(-20deg);
+}
+
+.shiny_button:after {
+	line-height: inherit !important;
+}
+
+@-webkit-keyframes shine {
+	from {
+		opacity: 0;
+		left: 0%;
+	}
+	50% {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+		left: 100%;
+	}
+}
+@-moz-keyframes shine {
+	from {
+		opacity: 0;
+		left: 0%;
+	}
+	50% {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+		left: 100%;
+	}
+}
+@keyframes shine {
+	from {
+		opacity: 0;
+		left: 0%;
+	}
+	50% {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+		left: 100%;
+	}
+}
+.shiny_button::before,
+.shiny_button::after {
+	position: absolute;
+	/* margin-left: -1em; */
+	opacity: 0;
+	font-size: 50px;
+	line-height: 1em;
+	content: "";
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	transition: all 0.2s;
+}
+/* End shiny hover effect*/
+.shiny_button::after {
+	line-height: inherit !important;
+}
+.shiny_button::after {
+	font-family: "Ionicons" !important;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	line-height: 1;
+	text-transform: none;
+	speak: none;
+}
+
+.shiny_button:hover {
+	color: #ffffff !important;
+	background: #fb8b24 !important;
+	border-radius: 5px;
+	letter-spacing: 0px;
+	padding-left: 0.7em;
+	padding-right: 2em;
+}
+
+.shiny_button:hover {
+	box-shadow: 0 0 30px 5px rgba(251, 139, 36, 0.5);
+	-webkit-transition: all 0.2s ease-out;
+	-moz-transition: all 0.2s ease-out;
+	transition: all 0.2s ease-out;
+}
+.shiny_button:active {
+	box-shadow: 0 0 0 0 transparent;
+	-webkit-transition: box-shadow 0.2s ease-in;
+	-moz-transition: box-shadow 0.2s ease-in;
+	transition: box-shadow 0.2s ease-in;
+}
+.shiny_button::after {
+	font-size: 50px;
+	color: #ffffff;
+	opacity: 0;
+	display: inline-block;
+}
+.shiny_button:hover::after {
+	opacity: 1;
+}
+.shiny_button:hover::after {
+	margin-left: 10px;
+	opacity: 1;
+}
+.shiny_button:hover {
+	color: #ffffff !important;
+	letter-spacing: 0px;
+}
+.shiny_button:hover::after {
+	opacity: 1;
+}
+#div_2 {
+	background-color: #012839;
+
+	text-align: center;
+}
+.shiny_button2 {
+	bottom: 0px;
+	box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+	box-sizing: border-box;
+	color: rgb(173, 0, 0);
+	display: inline-block;
+	height: 119px;
+	width: 240px;
+
+	overflow-wrap: break-word;
+	position: absolute;
+	top: 45%;
+	left: 30%;
+	text-align: center;
+	text-decoration: none solid #ad0000;
+
+	/*width: 402.938px;*/
+	word-wrap: break-word;
+	column-rule-color: #ad0000;
+	-webkit-font-smoothing: antialiased;
+	-webkit-locale: "en-US";
+	perspective-origin: 201.469px 59.5px;
+	-webkit-text-decorations-in-effect: none;
+	-webkit-text-emphasis-color: #ad0000;
+
+	transform-origin: 201.469px 59.5px;
+	caret-color: #ad0000;
+	border: 2px solid #ad0000;
+	border-radius: 30px 30px 30px 30px;
+	font: normal normal 500 normal 50px / 85px "Open Sans", Arial, sans-serif;
+	margin: 100px 0px;
+	outline: #ad0000 none 0px;
+	overflow: hidden;
+	padding: 15px 50px;
+	transition: all 0.2s ease-in 0s;
+	-webkit-border-after: 2px solid #ad0000;
+	-webkit-border-before: 2px solid #ad0000;
+	-webkit-border-end: 2px solid #ad0000;
+	-webkit-border-start: 2px solid #ad0000;
+	-webkit-transition: all 0.2s ease-in 0s;
+	-webkit-transform-origin: 201.469px 59.5px;
+} /*#A_2*/
+
+.shiny_button2:before {
+	bottom: 8.0625px;
+	box-shadow: rgb(255, 255, 255) 0px 0px 60px 20px;
+	color: #ad0000;
+	content: '""';
+	display: block;
+	height: 98.8906px;
+	left: 0px;
+	opacity: 0;
+	overflow-wrap: break-word;
+	position: absolute;
+	right: 430.938px;
+	text-align: center;
+	text-decoration: none solid #ad0000;
+	top: 8.04688px;
+	width: 0px;
+	word-wrap: break-word;
+	column-rule-color: #ad0000;
+	-webkit-font-smoothing: antialiased;
+	-webkit-locale: "en-US";
+	perspective-origin: 0px 49.4375px;
+	-webkit-text-decorations-in-effect: none;
+	-webkit-text-emphasis-color: #ad0000;
+	-webkit-text-fill-color: #ad0000;
+	-webkit-text-stroke-color: #ad0000;
+	transform: matrix(1, 0, -0.36397, 1, 0, 0);
+	transform-origin: 0px 49.4375px;
+	caret-color: #ad0000;
+	background: rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box
+		border-box;
+	border: 0px none #ad0000;
+	font: normal normal 500 normal 32px / 32px "Open Sans", Arial, sans-serif;
+	margin: 0px 0px 0px -32px;
+	outline: #ad0000 none 0px;
+	transition: all 0.2s ease 0s;
+	-webkit-border-after: 0px none #ad0000;
+	-webkit-border-before: 0px none #ad0000;
+	-webkit-border-end: 0px none #ad0000;
+	-webkit-border-start: 0px none rgb(173, 0, 0);
+	-webkit-transition: all 0.2s ease 0s;
+	-webkit-transform-origin: 0px 49.4375px;
+} /*#A_2:before*/
+
+/* Start shiny hover effect*/
+.shiny_button2 {
+	overflow: hidden;
+	box-shadow: 0 0 0 0 transparent;
+	-webkit-transition: all 0.2s ease-in;
+	-moz-transition: all 0.2s ease-in;
+	transition: all 0.2s ease-in;
+}
+.shiny_button2:hover {
+	box-shadow: 0 0 30px 5px rgba(173, 0, 0, 0.5); /* set your color here 
+       (it should be the same as the button bg color on hover but with 0.5 opacity)
+       and play with 30px and 5px values to adjust box-shadow */
+	-webkit-transition: all 0.2s ease-out;
+	-moz-transition: all 0.2s ease-out;
+	transition: all 0.2s ease-out;
+}
+.shiny_button2:hover:before {
+	-webkit-animation: shine 0.5s 0s linear;
+	-moz-animation: shine 0.5s 0s linear;
+	animation: shine 0.5s 0s linear;
+}
+.shiny_button2:active {
+	box-shadow: 0 0 0 0 transparent;
+	-webkit-transition: box-shadow 0.2s ease-in;
+	-moz-transition: box-shadow 0.2s ease-in;
+	transition: box-shadow 0.2s ease-in;
+}
+.shiny_button2:before {
+	content: "";
+	display: block;
+	width: 0px;
+	height: 86%;
+	position: absolute;
+	top: 7%;
+	left: 0%;
+	opacity: 0;
+	background: #ffffff;
+	box-shadow: 0 0 60px 20px #ffffff; /*play with 60px and 20px values to adjust box-shadow*/
+	-webkit-transform: skewX(-20deg);
+	-moz-transform: skewX(-20deg);
+	-ms-transform: skewX(-20deg);
+	-o-transform: skewX(-20deg);
+	transform: skewX(-20deg);
+}
+
+.shiny_button2:after {
+	line-height: inherit !important;
+}
+
+@-webkit-keyframes shine {
+	from {
+		opacity: 0;
+		left: 0%;
+	}
+	50% {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+		left: 100%;
+	}
+}
+@-moz-keyframes shine {
+	from {
+		opacity: 0;
+		left: 0%;
+	}
+	50% {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+		left: 100%;
+	}
+}
+@keyframes shine {
+	from {
+		opacity: 0;
+		left: 0%;
+	}
+	50% {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+		left: 100%;
+	}
+}
+.shiny_button2::before,
+.shiny_button2::after {
+	position: absolute;
+	/* margin-left: -1em; */
+	opacity: 0;
+	font-size: 50px;
+	line-height: 1em;
+	content: "";
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	transition: all 0.2s;
+}
+/* End shiny hover effect*/
+.shiny_button2::after {
+	line-height: inherit !important;
+}
+.shiny_button2::after {
+	font-family: "Ionicons" !important;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	line-height: 1;
+	text-transform: none;
+	speak: none;
+}
+
+.shiny_button2:hover {
+	color: #ffffff !important;
+	background: #ad0000 !important;
+	border-radius: 5px;
+	letter-spacing: 0px;
+	padding-left: 0.7em;
+	padding-right: 2em;
+}
+
+.shiny_button2:hover {
+	box-shadow: 0 0 30px 5px rgba(173, 0, 0, 0.5);
+	-webkit-transition: all 0.2s ease-out;
+	-moz-transition: all 0.2s ease-out;
+	transition: all 0.2s ease-out;
+}
+.shiny_button2:active {
+	box-shadow: 0 0 0 0 transparent;
+	-webkit-transition: box-shadow 0.2s ease-in;
+	-moz-transition: box-shadow 0.2s ease-in;
+	transition: box-shadow 0.2s ease-in;
+}
+.shiny_button2::after {
+	font-size: 50px;
+	color: #ffffff;
+	opacity: 0;
+	display: inline-block;
+}
+.shiny_button2:hover::after {
+	opacity: 1;
+}
+.shiny_button2:hover::after {
+	margin-left: 10px;
+	opacity: 1;
+}
+.shiny_button2:hover {
+	color: #ffffff !important;
+	letter-spacing: 0px;
+}
+.shiny_button2:hover::after {
+	opacity: 1;
+}
+
+/* .shiny_button2:after {
+	bottom: 15px;
+	color: rgb(255, 255, 255);
+	content: ">";
+	content: "\f125";
+	display: inline-block;
+	height: 85px;
+	left: 348.922px;
+	opacity: 0;
+	overflow-wrap: break-word;
+	position: absolute;
+
+	speak: none;
+	text-align: center;
+	text-decoration: none solid rgb(255, 255, 255);
+	top: 15px;
+	width: 80px;
+	word-wrap: break-word;
+	column-rule-color: rgb(255, 255, 255);
+	-webkit-font-smoothing: antialiased;
+	-webkit-locale: "en-US";
+	perspective-origin: 40px 42.5px;
+	-webkit-text-decorations-in-effect: none;
+	-webkit-text-emphasis-color: rgb(255, 255, 255);
+	-webkit-text-fill-color: rgb(255, 255, 255);
+	-webkit-text-stroke-color: rgb(255, 255, 255);
+	transform-origin: 40px 42.5px;
+	caret-color: rgb(255, 255, 255);
+	border: 0px none rgb(255, 255, 255);
+	
+	margin-left: -10em;
+	outline: rgb(255, 255, 255) none 0px;
+	transition: all 0.2s ease 0s;
+	-webkit-border-after: 0px none rgb(255, 255, 255);
+	-webkit-border-before: 0px none rgb(255, 255, 255);
+	-webkit-border-end: 0px none rgb(255, 255, 255);
+	-webkit-border-start: 0px none rgb(255, 255, 255);
+	-webkit-transition: all 0.2s ease 0s;
+	-webkit-transform-origin: 40px 42.5px;
+} #A_2:after */

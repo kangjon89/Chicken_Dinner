@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>YOU LOST!</title>
+        <link rel="icon" href="https://image.flaticon.com/icons/svg/75/75406.svg" type="image/x-icon">
+
+        <style type="text/css">
+            
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                background-color: #000;
+            }
+            .rain {
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            background: url(/static/img/rain.png);
+            animation: rain 0.3s linear infinite;
+          }
+          .rain:before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: white;
+            animation: lighting 4s linear infinite;
+            opacity: 0;
+          }
+          @keyframes rain {
+            0% {
+              background-position: 0% 0%;
+            }
+
+            100% {
+              background-position: 20% 100%;
+            }
+          }
+          @keyframes lighting {
+            0% {
+              opacity: 0;
+            }
+            10% {
+              opacity: 0;
+            }
+            11% {
+              opacity: 1;
+            }
+            14% {
+              opacity: 0;
+            }
+            17%{
+              opacity: 1;
+            }
+            20% {
+              opacity: 0;
+            }
+            21% {
+              opacity: 0;
+            }
+            24% {
+              opacity: 0;
+            }
+            50%{
+              opacity: 0.3;
+              color: red;
+            }
+            104% {
+              opacity: 0;
+            }
+            }
+            .fly-in-text {
+                list-style: none;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translateX(-50%) translateY(-50%);
+            }
+            .fly-in-text li {
+                display: inline-block;
+                margin-right: 50px;
+                font-family: Open Sans, Arial;
+                font-weight: 300;
+                font-size: 4em;
+                color: #fff;
+                opacity: 1;
+                transition: all 2.5s ease;
+            }
+            .fly-in-text li:last-child {
+                margin-right: 0;
+            }
+            .fly-in-text.hidden li {
+                opacity: 0;
+            }
+            .fly-in-text.hidden li:nth-child(1) { transform: translateX(-200px) translateY(-200px); }
+            .fly-in-text.hidden li:nth-child(2) { transform: translateX(20px) translateY(100px); }
+            .fly-in-text.hidden li:nth-child(3) { transform: translateX(-150px) translateY(-80px); }
+            .fly-in-text.hidden li:nth-child(4) { transform: translateX(10px) translateY(-200px); }
+            .fly-in-text.hidden li:nth-child(5) { transform: translateX(300px) translateY(200px); }
+            .fly-in-text.hidden li:nth-child(6) { transform: translateX(20px) translateY(-20px); }
+            .fly-in-text.hidden li:nth-child(7) { transform: translateX(30px) translateY(200px); }
+            .fly-in-text.hidden li:nth-child(8) { transform: translateX(-330px) translateY(-100px); }
+            
+            .wrapper {
+              text-align: center;
+              height: 20%;
+            }
+            .btn.hidden{
+              opacity: 0;
+              transform: translateX(-200%) translateY(100%);
+            }
+
+            .btn {
+              
+              opacity: 1;
+              transition: all 2.5s ease;
+              z-index: 9999;
+              position: absolute;
+              display: inline-block;
+              vertical-align: middle;
+              left: 42%;
+              width: 16%;
+              height: 8%;
+              top: 60%;
+              line-height: 52px;
+              padding: 15px 20px;
+              
+              background: #CDDC39;
+              border-radius: 2px;
+              color: #FFF;
+              font: 500 2em 'Rubik', sans-serif;  
+              border: 4px solid #CDDC39;
+              box-shadow: 0 0 0 4px rgba(239, 243, 194, 0.5);
+              transition: all 2s cubic-bezier(0.23, -.61, .72, 1.5);
+              outline: none;  
+            }
+            .btn:hover {
+              cursor: pointer;
+              box-shadow: 0 0 0 24px rgba(239, 243, 194, 0); 
+              background: transparent;
+              color: #CDDC39;
+            }
+
+            .btn:active, .btn:focus, .btn:hover {
+              outline: none;
+            }
+        </style>
+    </head>
+    <body>
+      <div class="wrapper">
+          <a href="/game">
+            <button class="btn hidden">
+              Again?
+          </button>
+          </a>
+        </div>
+      <div class="rain"></div>
+        <ul class="fly-in-text hidden">
+            <li>G</li>
+            <li>A</li>
+            <li>M</li>
+            <li>E</li>
+            <li>O</li>
+            <li>V</li>
+            <li>E</li>
+            <li>R</li>
+        </ul>
+        
+        
+        
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script type="text/javascript">
+            
+            $(function() {
+                
+                setTimeout(function() {
+                    $('.fly-in-text').removeClass('hidden');
+                    $('.btn').removeClass('hidden');
+                }, 500);
+                
+            })();
+            
+        </script>
+
+    </body>
+</html>

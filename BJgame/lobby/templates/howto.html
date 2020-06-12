@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Play</title>
+  <link rel="icon" href="https://image.flaticon.com/icons/svg/1983/1983636.svg" type="image/x-icon">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  {%load static%}
+
+  <link rel="stylesheet" href="{% static 'howto.css'%}" />
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body class="fadeout">
+  
+  <div class="container">
+
+		<input type="checkbox" id="check" />
+		<label for="check">
+			<i class="fas fa-bars" id="btn"></i>
+			<i class="fas fa-times" id="cancel"></i>
+		</label>
+<div class="sidebar">
+  <header>Black Jack</header>
+  <ul>
+    <li>
+      <a href="/lobby"><i class="fas fa-qrcode"></i>My Page</a>
+    </li>
+    <li>
+      <a href="/lobby/howto"><i class="fas fa-link"></i>How to play</a>
+    </li>
+    <li>
+      <a href="#"><i class="fas fa-stream"></i>Ranking</a>
+    </li>
+    <li>
+      <a href="/lobby/strategy"><i class="fas fa-calendar-week"></i>Strategy</a>
+    </li>
+    <li>
+      <a href="/lobby/other"><i class="fas fa-question-circle"></i>Other games</a>
+    </li>
+    <li>
+      <a href="/lobby/services"><i class="fas fa-sliders-h"></i>Services</a>
+    </li>
+    <li>
+      <a href="logout"><i class="fas fa-envelope"></i>Log out</a>
+    </li>
+  </ul>
+</div>
+
+<section class="fadeout">
+
+<div class="container">
+
+  <div class="col-md-4 rule-block-header">
+    <h1 class="block-heading">
+      <span>How to Play:</span>
+      <strong>Blackjack</strong>
+    </h1>
+    <ul class="accentuated-list list-unstyled">
+      <li>
+        "Game Type: Casino"
+      </li>
+      <li>
+        "Age Requirement: 21+"
+      </li>
+      <li>
+        "Players: 2, 3, 4, 5+"
+      </li>
+    </ul>
+  </div>
+
+  <div class="col-md-8 larger-text">
+    <p>
+    Equally well known as Twenty-One. The rules are simple, the play is thrilling, and there is 
+      opportunity for high strategy. In fact, for the expert player who mathematically plays a 
+      perfect game and is able to count cards, the odds are sometimes in that player's favor to win.
+    </p>
+    <p>
+      But even for the casual participant who plays a reasonably good game, the casino odds are less, 
+      making Blackjack one of the most attractive casino games for the player. While the popularity of 
+      Blackjack dates from World War I, its roots go back to the 1760s in France, where it is called Vingt-et-Un 
+      (French for 21). Today, Blackjack is the one card game that can be found in every American gambling casino. 
+      As a popular home game, it is played with slightly different rules. In the casino version, the house is 
+      the dealer (a "permanent bank"). In casino play, the dealer remains standing, and the players are seated. 
+      The dealer is in charge of running all aspects of the game, from shuffling and dealing the cards to handling all 
+      bets. In the home game, all of the players have the opportunity to be the dealer (a "changing bank").    
+    </p>
+    <p>
+      <h1>The Deck of Cards</h1>
+    </p>
+    <p>
+      The standard 52-card pack is used, but in most casinos several decks of cards are shuffled together. 
+      The six-deck game (312 cards) is the most popular. In addition, the dealer uses a blank plastic card, 
+      which is never dealt, but is placed toward the bottom of the pack to indicate when it will be time for the cards to be 
+      reshuffled. When four or more decks are used, they are dealt from a shoe (a box that allows the dealer to remove 
+      cards one at a time, face down, without actually holding one or more packs).
+    </p>
+    <p>
+      <h1>Objective of Game</h1>
+    </p>
+    <p>
+      Each participant attempts to beat the dealer by getting a count as close to 21 as possible, without going over 21.
+    </p>
+    <p>
+    <h1>Card Values/Scoring</h1>
+    </p>
+    <p>
+      It is up to each individual player if an ace is worth 1 or 11. Face cards are 10 and any other card is its pip value.
+    </p>
+    <p>
+    <h1>Basic Strategy</h1>
+    </p>
+    <p>
+      Winning tactics in Blackjack require that the player play each hand in the optimum way, and such strategy always takes 
+      into account what the dealer's upcard is. When the dealer's upcard is a good one, a 7, 8, 9, 10-card, or ace for example, the 
+      player should not stop drawing until a total of 17 or more is reached. When the dealer's upcard is a poor one, 4, 5, or 6, the 
+      player should stop drawing as soon as he gets a total of 12 or higher. The strategy here is never to take a card if there is 
+      any chance of going bust. The desire with this poor holding is to let the dealer hit and hopefully go over 21. Finally, when 
+      the dealer's up card is a fair one, 2 or 3, the player should stop with a total of 13 or higher.
+    </p>
+    <p>
+      With a soft hand, the general strategy is to keep hitting until a total of at least 18 is reached. Thus, with an ace and a six (7 or 17), 
+      the player would not stop at 17, but would hit.
+    </p>
+    <p>
+      The basic strategy for doubling down is as follows: With a total of 11, the player should always double down. With a total of 10, 
+      he should double down unless the dealer shows a ten-card or an ace. With a total of 9, the player should double down only if the 
+      dealer's card is fair or poor (2 through 6).
+    </p>
+    <p>
+      For splitting, the player should always split a pair of aces or 8s; identical ten-cards should not be split, and neither should 
+      a pair of 5s, since two 5s are a total of 10, which can be used more effectively in doubling down. A pair of 4s should not be split 
+      either, as a total of 8 is a good number to draw to. Generally, 2s, 3s, or 7s can be split unless the dealer has an 8, 9, ten-card, 
+      or ace. Finally, 6s should not be split unless the dealer's card is poor (2 through 6).
+    </p>
+  </div>
+</div>
+
+</section>
+
+</body>
+</html>

@@ -1,0 +1,152 @@
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		{%load static%}
+		<link rel="stylesheet" href="{% static 'login.css'%}" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+	</head>
+	<body>
+		<input type="checkbox" id="check" />
+		<label for="check">
+			<i class="fas fa-bars" id="btn"></i>
+			<i class="fas fa-times" id="cancel"></i>
+		</label>
+		<div class="sidebar">
+			<header>Black Jack</header>
+			<ul>
+				<li>
+					<a href="#"><i class="fas fa-qrcode"></i>My page</a>
+				</li>
+				<li>
+					<a href="#"><i class="fas fa-link"></i>How to play</a>
+				</li>
+				<li>
+					<a href="#"><i class="fas fa-stream"></i>Lanking</a>
+				</li>
+				<li>
+					<a href="#"><i class="fas fa-calendar-week"></i>Strategy</a>
+				</li>
+				<li>
+					<a href="#"><i class="fas fa-question-circle"></i>Other games</a>
+				</li>
+				<li>
+					<a href="#"><i class="fas fa-sliders-h"></i>Services</a>
+				</li>
+				<li>
+					<a href="#"><i class="fas fa-envelope"></i>Contact</a>
+				</li>
+			</ul>
+		</div>
+		<section></section>
+		<div id="main_contains">
+			<!-- {% if messages %}
+		<ul class="messages">
+			{% for message in messages %}
+			<li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+				{{ message }}
+			</li>
+			{% endfor %}
+		</ul>
+		{% endif %} -->
+			<div class="login">
+				<div id="back">
+					<form class="box01" action="/login" method="POST">
+						{%csrf_token%}
+						<h1>Login</h1>
+
+						<input type="text" name="email_login" placeholder="UserID" />
+
+						<input
+							type="password"
+							name="password_login"
+							placeholder="Password"
+						/>
+						{% if messages %} {% for message in messages %}
+						<div
+							{%
+							if
+							message.tags
+							%}
+							style="color:white"
+							class="error"
+							{%
+							endif
+							%}
+						>
+							{{ message }}
+						</div>
+						{% endfor %} {% endif %}
+						<input type="submit" name="" value="Login" />
+					</form>
+					<div class="triangle01"></div>
+				</div>
+			</div>
+			<div class="registration">
+				<form class="box02" action="/register" method="POST">
+					{%csrf_token%}
+					<h1>Registration</h1>
+					<input type="text" name="name" placeholder="Name" />
+					<input type="email" name="email" placeholder="E-mail" />
+					<input type="password" name="password" placeholder="Password" />
+					<input
+						type="password"
+						name="conf_pw"
+						placeholder="Confirm Password"
+					/>
+					{% if messages %} {% for message in messages %}
+					<div
+						{%
+						if
+						message.tags
+						%}
+						style="color:white"
+						class="error"
+						{%
+						endif
+						%}
+					>
+						{{ message }}
+					</div>
+					{% endfor %} {% endif %}
+					<input type="submit" name="" value="Register" />
+					<div class="triangle02"></div>
+				</form>
+			</div>
+		</div>
+
+		<script>
+			$(document).ready(() => {
+				$("body").fadeOut();
+				$("body").fadeIn(1600);
+			});
+
+			$(".triangle01").on("mouseenter", () => {
+				$(".triangle01").css({ "border-top": "solid 20px #2ecc71" });
+			});
+			$(".triangle01").on("mouseleave", () => {
+				$(".triangle01").css({ "border-top": "solid 15px #adfddc" });
+			});
+			$(".triangle02").on("mouseenter", () => {
+				$(".triangle02").css({ "border-bottom": "solid 20px #2ecc71" });
+			});
+			$(".triangle02").on("mouseleave", () => {
+				$(".triangle02").css({ "border-bottom": "solid 15px #adfddc" });
+			});
+			$(".registration").hide();
+			$(".triangle01").click(() => {
+				$(".login").fadeOut(400, () => {
+					$(".registration").fadeIn(500);
+				});
+			});
+			$(".triangle02").click(() => {
+				$(".registration").fadeOut(400, () => {
+					$(".login").fadeIn(500);
+				});
+			});
+			$("body").on("click", () => {
+				$(".error").slideUp();
+			});
+		</script>
+	</body>
+</html>

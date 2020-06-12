@@ -1,0 +1,87 @@
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+{%load static%}
+<link rel="stylesheet" href="{% static 'lobby.css'%}" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" crossorigin="anonymous"></script>
+<title>Dashboard</title>
+<link rel="icon" href="https://image.flaticon.com/icons/svg/1983/1983636.svg" type="image/x-icon">
+
+</head>
+	<body class="fadeout">
+		<input type="checkbox" id="check" />
+		<label for="check">
+			<i class="fas fa-bars" id="btn"></i>
+			<i class="fas fa-times" id="cancel"></i>
+		</label>
+		<div class="sidebar">
+			<header>Black Jack</header>
+			<ul>
+				<li>
+					<a href="#"><i class="fas fa-qrcode"></i>My Page</a>
+				</li>
+				<li>
+					<a href="/lobby/howto"><i class="fas fa-link"></i>How to play</a>
+				</li>
+				<li>
+					<a href="#"><i class="fas fa-stream"></i>Ranking</a>
+				</li>
+				<li>
+					<a href="/lobby/strategy"><i class="fas fa-calendar-week"></i>Strategy</a>
+				</li>
+				<li>
+					<a href="/lobby/other"><i class="fas fa-question-circle"></i>Other games</a>
+				</li>
+				<li>
+					<a href="/lobby/services"><i class="fas fa-sliders-h"></i>Services</a>
+				</li>
+				<li>
+					<a href="logout"><i class="fas fa-envelope"></i>Log out</a>
+				</li>
+			</ul>
+		</div>
+		<section class="fadeout"></section>
+		<a href="/game" id="target">
+			<button>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				Game start
+			</button>
+		</a>
+
+		<script>
+			
+			$("button").on("mouseenter", () => {
+				$("section").css({ opacity: "0.2" });
+				$("target").toggle( 'slide', 'slow');
+			});
+
+			$("button").on("mouseleave", () => {
+				$("section").css({ opacity: "0.1" });
+			});
+			$(window).on('load', function(){
+			$('body').removeClass('fadeout');
+			});
+			$(function() {
+
+			$('a:not([href^="#"]):not([target])').on('click', function(e){
+  				  e.preventDefault(); 
+  				  url = $(this).attr('href');
+  				  if (url !== '') {
+						$('body').addClass('fadeout');
+  						setTimeout(function(){
+					window.location = url;
+  				    }, 800);
+  				  }
+  				  return false;
+  				});
+});
+			
+		</script>
+
+	</body>
+</html>

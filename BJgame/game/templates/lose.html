@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+	<div id="victory">
+		<head>
+			<meta charset="UTF-8" />
+			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+			{%load static%}
+			<link rel="stylesheet" href="{% static 'lose.css'%}" />
+			<link
+				type="text/css"
+				rel="stylesheet"
+				href="http://code.jquery.com/ui/1.10.3/themes/cupertino/jquery-ui.min.css"
+			/>
+			<script
+				type="text/javascript"
+				src="http://code.jquery.com/jquery-3.1.1.min.js"
+			></script>
+			<script
+				type="text/javascript"
+				src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"
+			></script>
+			<title>You Lose!</title>
+			<link rel="icon" href="https://image.flaticon.com/icons/svg/1983/1983636.svg" type="image/x-icon">
+
+		</head>
+		<body>
+			<section id="back"></section>
+			<div id="video2">
+				<video src="/static/MP4/thunder01.mp4" autoplay muted id="video"></video>
+			</div>
+			<section id="flash">
+				<h1 id="result">Result</h1>
+			</section>
+			<div class="rain"></div>
+			<div class="lose" data-text="You_lose">You lose</div>
+			<div class="point">
+				<p id="dp">Dealer point: {{ money }}</p>
+				<p id="pp">Player point: {{ user_money }}</p>
+			</div>
+			<div id="div_1">
+				<a 
+				{% if request.session.gameover %}
+				href="/game/gameover"
+				{% else %}
+				href="/game" 
+				{% endif %}
+				
+				
+				class="shiny_button" id="A_2">Again?</a>
+			</div>
+			<div id="div_2">
+				<a 
+				{% if request.session.gameover %}
+				href="/game/gameover"
+				{% else %}
+				href="/lobby" 
+				{% endif %}
+				
+				
+				class="shiny_button2" id="A_3">Quit</a>
+			</div>
+
+			<script>
+				var show_video = () => {
+					$("#video").show();
+					$("#flash").hide();
+				};
+				setTimeout(show_video, 3000);
+				$(document).ready(() => {
+					$("#video").hide();
+					$(".lose").hide();
+					$("#gold").hide();
+					$("#div_1").hide();
+					$("#div_2").hide();
+					$(".point").hide();
+					$(".rain").hide();
+					$("#back").hide();
+				});
+				
+				
+				var show_win = () => {
+					$("#video2").hide();
+					$("#back").show();
+					$(".lose").fadeIn();
+					$(".rain").fadeIn();
+					$("body").css({ background: "url(img/seattle.jpg)" });
+				};
+				var show_gold = () => {
+					$("#gold").show();
+				};
+				$(".lose").on("mouseenter", () => {
+					$(".lose").css({ transform: "translate(-240px,-300px)" });
+					$(".point").fadeIn();
+					$("#div_1").fadeIn();
+					$("#div_2").fadeIn();
+				});
+				setTimeout(show_win, 3600);
+				setTimeout(show_gold, 3800);
+				
+			</script>
+		</body>
+	</div>
+</html>
